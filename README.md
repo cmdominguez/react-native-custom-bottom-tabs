@@ -96,19 +96,37 @@ Para usar esta librería, sigue los pasos a continuación:
 
     export default CustomTabs;
     ```
+    
+## Personalización de la Altura de la Tab Bar
+
+### Android
+
+Para personalizar la altura de la tab bar en Android, añade un archivo llamado `dimens.xml` en la carpeta `/res/values` y agrega el siguiente contenido:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_height">76dp</dimen>
+</resources>
+```
+
+### iOS
+Para iOS, puedes pasar un segundo parámetro a setBottomTabsComponent con la altura que desees usar.
 
 ## API
 
-### `setBottomTabsComponent(componentName)`
+### `setBottomTabsComponent(componentName, height)`
 
-Reemplaza el componente nativo de tabs con el componente de React Native especificado.
+Reemplaza el componente nativo de tabs con el componente de React Native especificado y permite establecer una altura personalizada para iOS.
 
 - **Parámetros**:
   - `componentName` (string): El nombre del componente registrado que se usará como el nuevo rootview para los tabs.
+  - `height` (number, opcional): La altura personalizada para la tab bar en iOS.
+
 
 - **Ejemplo**:
   ```javascript
-  setBottomTabsComponent('CustomTabs');
+  setBottomTabsComponent('CustomTabs', 76);
   ```
 
 ## Notas
